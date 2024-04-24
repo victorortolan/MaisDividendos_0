@@ -1,0 +1,11 @@
+.home {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 84.5vh;
+}
+
+.name {
+    font-size: 10em;
+}
