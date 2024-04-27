@@ -1,10 +1,10 @@
-import MainContainer from '../components/MainContainer';
-import '../styles/globals.css';
+import MainContainer from "../components/MainContainer";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
-    return (
-      <MainContainer>
-        <Component {...pageProps}/>
-      </MainContainer>
-    ) 
-  }
+  return (
+    <MainContainer>
+      <Component {...pageProps} />
+    </MainContainer>
+  );
+}
