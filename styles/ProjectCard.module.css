@@ -1,0 +1,36 @@
+.title {
+  font-size: 16px;
+  color: #e3e8f0;
+}
+
+.description {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.image {
+  border: #6ead3a solid 2px;
+  margin: 16px 0px;
+  width: 200px;
+}
+
+.techs {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tech_card {
+  padding: 4px 12px;
+  border: 1px solid #6ead3a;
+  border-radius: 10px;
+  margin: 8px 6px 0px 0px;
+  /* background-color: #64748b;
+  opacity: 0.45;
+  color: #fff; */
+}
+
+.link {
+  color: #6ead3a;
+}
