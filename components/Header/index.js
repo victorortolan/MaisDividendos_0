@@ -21,11 +21,8 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>Vítor Alves</h1>
-      <h2 className={styles.subtitle}>Desenvolvedor</h2>
-      <p className={styles.header_p}>
-        Estudando Ciência da Computação, Tecnologia e Desenvolvimento.
-      </p>
+      <h1 className={styles.title}>Finance Control</h1>
+      <h2 className={styles.subtitle}>Controle suas finanças online.</h2>
       <ul
         style={{
           "margin-top": "16px",
@@ -33,11 +30,9 @@ const Header = () => {
           "flex-direction": "row",
         }}
       >
-        <ActiveLink href="https://github.com/alvescode">GitHub</ActiveLink>
-        <ActiveLink href="https://www.linkedin.com/in/alvescode/">
-          LinkedIn
-        </ActiveLink>
-        <ActiveLink href="/projetos">Envie-me Uma Mensagem Aqui!</ActiveLink>
+        <ActiveLink href="/login">Login</ActiveLink>
+        <ActiveLink href="/cadastro">Cadastro</ActiveLink>
+        <ActiveLink href="/sobre">Sobre</ActiveLink>
       </ul>
     </header>
   );
