@@ -4,7 +4,7 @@
   "description": "Repositório reservado para estudo de desenvolvimento web com o framework Next.js para futuras aplicações.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && next dev ",
+    "dev": "next dev",
     "services:up": "sudo docker compose -f infra/compose.yaml up -d",
     "services:down": "sudo docker compose -f infra/compose.yaml down",
     "services:stop": "sudo docker compose -f infra/compose.yaml stop",
@@ -17,12 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "next": "^13.1.6",
-    "pg": "^8.11.5",
+    "nvm": "^0.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "jest": "^29.6.2",
-    "prettier": "^3.2.5"
   }
 }

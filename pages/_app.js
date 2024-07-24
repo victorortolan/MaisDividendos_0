@@ -1,10 +1,11 @@
 import MainContainer from "../components/MainContainer";
+import Home from './index';
 import "../styles/globals.css";
 
-export default function MyApp({ Component, pageProps }) {
+export default function App() {
   return (
-    <MainContainer>
-      <Component {...pageProps} />
-    </MainContainer>
+    <div className="App">
+      <Home />
+    </div>
   );
 }

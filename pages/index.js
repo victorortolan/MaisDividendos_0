@@ -2,30 +2,72 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import ExperienceCard from "../components/ExperienceCard";
 import ProjectCard from "../components/ProjectCard";
+import { useState } from 'react';
+import Image from "next/image";
 
-const Home = () => {
+function Home() {
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
-    <div className={styles.home}>
-      <p className={styles.title}>SOBRE MIM</p>
-      <p className={styles.content}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
-      <p className={styles.title}>EXPERIÊNCIA</p>
-      <ExperienceCard></ExperienceCard>
-      <ExperienceCard></ExperienceCard>
-      <p className={styles.title}>PROJETOS</p>
-      <ProjectCard></ProjectCard>
-      <ProjectCard></ProjectCard>
+    <div className={styles.homeBody}>
+      <div className={styles.homeContainer}>
+        <div className={styles.logoContainer}>
+          <img src="/images/logo.jpeg" alt="Finance Control" className={styles.logo}/>
+        </div>
+        <div className={styles.formContainer}>
+          {isLogin ? (
+            <LoginForm switchForm={() => setIsLogin(false)} />
+          ) : (
+            <RegisterForm switchForm={() => setIsLogin(true)} />
+          )}
+        </div>
+      </div>
     </div>
   );
-};
+}
+
+function LoginForm({ switchForm }) {
+  return (
+    <div className={styles.formContent}>
+      <h2>Login</h2>
+      <form>
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="password">Senha:</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit" className={styles.homeButton}>Entrar</button>
+      </form>
+      <p><br></br>Não tem uma conta? <span onClick={switchForm} className={styles.switch}>Cadastre-se</span></p>
+    </div>
+  );
+}
+
+function RegisterForm({ switchForm }) {
+  return (
+    <div className={styles.formContent}>
+      <h2>Cadastro</h2>
+      <form>
+        <div className={styles.formGroup}>
+          <label htmlFor="name">Nome:</label>
+          <input type="text" id="name" required />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="password">Senha:</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit" className={styles.homeButton}>Cadastrar</button>
+      </form>
+      <p><br></br>Já tem uma conta? <span onClick={switchForm} className={styles.switch}>Entre</span></p>
+    </div>
+  );
+}
 
 export default Home;
